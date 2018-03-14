@@ -1,0 +1,29 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2951c612d91fa234c9a4e89feb362adc, type: 3}
+  m_Name: New Gun
+  m_EditorClassIdentifier: 
+  gunName: Gun
+  damage: 10
+  fireRate: 100
+  range: 1
+  reloadTime: 0.2
+  gunGraphics: {fileID: 1205077797387412, guid: 8900931cda4e0824697782d65208f09f,
+    type: 2}
+  gunFiringEffect: {fileID: 0}
+  thing:
+    bleedDamage: 0
+    timeBetweenBleeds: 0
+    numberOfBleedTicks: 0
+    bleedRepeatNumber: 0
+    waitPeriod: 0
+    initalDamage: 0
+    type: 0
