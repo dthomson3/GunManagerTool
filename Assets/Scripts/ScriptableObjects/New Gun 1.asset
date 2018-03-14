@@ -12,11 +12,23 @@ MonoBehaviour:
   m_Name: New Gun 1
   m_EditorClassIdentifier: 
   gunName: jim
-  damage: 100
   fireRate: 24.5
   range: 450
   reloadTime: 1
   gunGraphics: {fileID: 1354857526933586, guid: 76a737235daee4e4f9d3359e754116f0,
     type: 2}
-  gunFiringEffect: {fileID: 198365548536658022, guid: 76a737235daee4e4f9d3359e754116f0,
-    type: 2}
+  gunFiringEffect: {fileID: 0}
+  damageInfo:
+    bleedDamage: 0
+    timeBetweenTicks: 0
+    bleedRepeatNumber: 0
+    initialDelay: 0
+    bleedDamageArray:
+    - 0
+    - 0
+    - 0
+    - 0
+    - 0
+    timeBetweenTicksArray: []
+    initialDamage: 5
+    type: 4

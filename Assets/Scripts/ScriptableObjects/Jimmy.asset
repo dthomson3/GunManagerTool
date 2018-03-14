@@ -12,19 +12,29 @@ MonoBehaviour:
   m_Name: Jimmy
   m_EditorClassIdentifier: 
   gunName: 
-  damage: 10
   fireRate: 0
   range: 500
   reloadTime: 1
   gunGraphics: {fileID: 1173160247919484, guid: f4de0bd89e4b15041ae9658b6ef680fe,
     type: 2}
-  gunFiringEffect: {fileID: 198710413407239902, guid: f4de0bd89e4b15041ae9658b6ef680fe,
-    type: 2}
-  thing:
+  gunFiringEffect: {fileID: 0}
+  damageInfo:
     bleedDamage: 0
-    timeBetweenBleeds: 0
-    numberOfBleedTicks: 0
-    bleedRepeatNumber: 0.06
-    waitPeriod: 0
-    initalDamage: 0
-    type: 0
+    timeBetweenTicks: 0
+    bleedRepeatNumber: 0
+    initialDelay: 10
+    bleedDamageArray:
+    - 0
+    - 0
+    - 0
+    - 0
+    - 0
+    timeBetweenTicksArray:
+    - 0
+    - 0
+    - 0
+    - 0
+    - 0
+    - 0
+    initialDamage: 50
+    type: 5

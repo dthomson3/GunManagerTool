@@ -5,25 +5,69 @@ using UnityEngine;
 public enum DamageTypes
 {
     initialOnly,
-    initialWithBleed,
-    bleedOnly
+    initialWithBleedSameDamageSameTick,
+    initialWithBleedManyDamageSameTick,
+    initialWithBleedSameDamageManyTick,
+    initialWithBleedManyDamageManyTick,
+    bleedOnlySameDamageSameTick,
+    bleedOnlyManyDamageSameTick,
+    bleedOnlySameDamageManyTick,
+    bleedOnlyManyDamageManyTick
 }
 
 [System.Serializable]
 public class DamageInfo
 {
     public float bleedDamage;
-    public float timeBetweenBleeds;
-    public float numberOfBleedTicks;
+    public float timeBetweenTicks;
+
     public float bleedRepeatNumber;
-    public float waitPeriod;
-    public int initalDamage;
+
+    public float initialDelay;
+
+    public float[] bleedDamageArray;
+    public float[] timeBetweenTicksArray;
+
+    public int initialDamage;
+
     public DamageTypes type;
 
-    void DoDamage(TakeDamage _target)
+    public void DoDamage(TakeDamage _target)
     {
-        _target.DoSingleDamage(initalDamage);
-        _target.DoTimedDamage(bleedDamage, timeBetweenBleeds, bleedRepeatNumber, waitPeriod);
+        switch (type)
+        {
+            case DamageTypes.initialOnly:
+                _target.DoSingleDamage(initialDamage);
+                break;
+            case DamageTypes.initialWithBleedSameDamageSameTick:
+                _target.DoSingleDamage(initialDamage, initialDelay);
+                _target.DoTimedDamage(bleedDamage, timeBetweenTicks, bleedRepeatNumber);
+                break;
+            case DamageTypes.initialWithBleedManyDamageSameTick:
+                _target.DoSingleDamage(initialDamage, initialDelay);
+                _target.DoTimedDamage(bleedDamageArray, timeBetweenTicks);
+                break;
+            case DamageTypes.initialWithBleedSameDamageManyTick:
+                _target.DoSingleDamage(initialDamage, initialDelay);
+                _target.DoTimedDamage(bleedDamage, timeBetweenTicksArray);
+                break;
+            case DamageTypes.initialWithBleedManyDamageManyTick:
+                _target.DoSingleDamage(initialDamage, initialDelay);
+                _target.DoTimedDamage(bleedDamageArray, timeBetweenTicksArray);
+                break;
+            case DamageTypes.bleedOnlySameDamageSameTick:
+                _target.DoTimedDamage(bleedDamage, timeBetweenTicks,bleedRepeatNumber);
+                break;
+            case DamageTypes.bleedOnlyManyDamageSameTick:
+                _target.DoTimedDamage(bleedDamageArray, timeBetweenTicks);
+                break;
+            case DamageTypes.bleedOnlySameDamageManyTick:
+                _target.DoTimedDamage(bleedDamage, timeBetweenTicksArray);
+                break;
+            case DamageTypes.bleedOnlyManyDamageManyTick:
+                _target.DoTimedDamage(bleedDamageArray, timeBetweenTicksArray);
+                break;
+        }
     }
 }
 

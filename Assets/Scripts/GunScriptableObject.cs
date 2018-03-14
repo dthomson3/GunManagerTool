@@ -10,9 +10,6 @@ public class GunScriptableObject : ScriptableObject {
     [Tooltip("Name of the gun, should you want to display it anywhere")]
     public string gunName;
 
-    [Tooltip("How much health each bullet removes from the target")]
-    public float damage;
-
     [Tooltip("How fast the gun shoots. Put to 0 for the gun to be not automatic. 100 is the fastest fire rate.")]
     [Range(0.0f, 100.0f)]
     public float fireRate;
@@ -29,5 +26,5 @@ public class GunScriptableObject : ScriptableObject {
     [HideInInspector]
     public ParticleSystem gunFiringEffect;
 
-    public DamageInfo thing;
+    public DamageInfo damageInfo;
 }
