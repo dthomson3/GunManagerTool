@@ -31,4 +31,8 @@ MonoBehaviour:
     - 0
     timeBetweenTicksArray: []
     initialDamage: 5
+<<<<<<< HEAD
     WayDamageIsDealt: 2
+=======
+    type: 2
+>>>>>>> 01587db08489ad7bf034dcaf9d767f83208a4525

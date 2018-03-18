@@ -22,7 +22,11 @@ MonoBehaviour:
     bleedDamage: 0
     timeBetweenTicks: 0
     bleedRepeatNumber: 0
+<<<<<<< HEAD
     initialDelay: 0
+=======
+    initialDelay: 10
+>>>>>>> 01587db08489ad7bf034dcaf9d767f83208a4525
     bleedDamageArray:
     - 0
     - 0
@@ -36,5 +40,10 @@ MonoBehaviour:
     - 0
     - 0
     - 0
+<<<<<<< HEAD
     initialDamage: 0
     WayDamageIsDealt: 0
+=======
+    initialDamage: 50
+    type: 5
+>>>>>>> 01587db08489ad7bf034dcaf9d767f83208a4525

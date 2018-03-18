@@ -20,6 +20,7 @@ public class DamageInfo
 {
     [Tooltip("Every Bleed tick will deal this amount of damage")]
     public float bleedDamage;
+<<<<<<< HEAD
 
     [Tooltip("Delay between when each Bleed Damage will deal damage in seconds")]
     public float timeBetweenTicks;
@@ -45,6 +46,24 @@ public class DamageInfo
     public void DoDamage(HealthManager _target)
     {
         switch (WayDamageIsDealt)
+=======
+    public float timeBetweenTicks;
+
+    public float bleedRepeatNumber;
+
+    public float initialDelay;
+
+    public float[] bleedDamageArray;
+    public float[] timeBetweenTicksArray;
+
+    public int initialDamage;
+
+    public DamageTypes type;
+
+    public void DoDamage(TakeDamage _target)
+    {
+        switch (type)
+>>>>>>> 01587db08489ad7bf034dcaf9d767f83208a4525
         {
             case DamageTypes.initialOnly:
                 _target.DoSingleDamage(initialDamage);

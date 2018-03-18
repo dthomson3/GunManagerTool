@@ -59,10 +59,14 @@ public class GunManager : MonoBehaviour {
         RaycastHit hit;
         if (Physics.Raycast(transform.position, transform.forward, out hit, currentGun.range))
         {
-            if (hit.collider != null && hit.transform.GetComponent<HealthManager>() != null)
+            if (hit.collider != null && hit.transform.GetComponent<TakeDamage>() != null)
             {
                 print("HIT");
+<<<<<<< HEAD
                 HealthManager takeDamage = hit.transform.GetComponent<HealthManager>();
+=======
+                TakeDamage takeDamage = hit.transform.GetComponent<TakeDamage>();
+>>>>>>> 01587db08489ad7bf034dcaf9d767f83208a4525
                 currentGun.damageInfo.DoDamage(takeDamage);
             }
         }
