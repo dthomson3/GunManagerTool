@@ -20,6 +20,8 @@ public class GunManager : MonoBehaviour {
     [HideInInspector]
     public bool canShoot;
 
+    
+
     private void Start()
     {
         SetUpGuns();
@@ -45,6 +47,7 @@ public class GunManager : MonoBehaviour {
         }
         else
         {
+            ChangeWeapon(0);
             currentGun = gunInventory[0];
         }
     }
@@ -52,7 +55,6 @@ public class GunManager : MonoBehaviour {
     public void Shoot()
     {
         currentGun.gunFiringEffect.Play();
-        currentGun.gunFiringEffect.Stop();
         print("FIRE");
         RaycastHit hit;
         if (Physics.Raycast(transform.position, transform.forward, out hit, currentGun.range))
@@ -60,8 +62,8 @@ public class GunManager : MonoBehaviour {
             if (hit.collider != null && hit.transform.GetComponent<HealthManager>() != null)
             {
                 print("HIT");
-                HealthManager hm = hit.transform.GetComponent<HealthManager>();
-                hm.Health -= currentGun.damage;
+                HealthManager takeDamage = hit.transform.GetComponent<HealthManager>();
+                currentGun.damageInfo.DoDamage(takeDamage);
             }
         }
     }
