@@ -18,23 +18,33 @@ public enum DamageTypes
 [System.Serializable]
 public class DamageInfo
 {
+    [Tooltip("Every Bleed tick will deal this amount of damage")]
     public float bleedDamage;
+
+    [Tooltip("Delay between when each Bleed Damage will deal damage in seconds")]
     public float timeBetweenTicks;
 
+    [Tooltip("Number of times bleed damage is dealt")]
     public float bleedRepeatNumber;
 
+    [Tooltip("The delay between when the player shoots and when the damage is dealt (in seconds). Put to 0 for no delay")]
     public float initialDelay;
 
+    [Tooltip("An array of how much Bleed Damage each tick will deal")]
     public float[] bleedDamageArray;
+
+    [Tooltip("Delay between when each Bleed Damage will deal damage in seconds")]
     public float[] timeBetweenTicksArray;
 
+    [Tooltip("Amount of damage to be dealt initially. (Seperate from bleed damage)")]
     public int initialDamage;
 
-    public DamageTypes type;
+    
+    public DamageTypes WayDamageIsDealt;
 
     public void DoDamage(TakeDamage _target)
     {
-        switch (type)
+        switch (WayDamageIsDealt)
         {
             case DamageTypes.initialOnly:
                 _target.DoSingleDamage(initialDamage);

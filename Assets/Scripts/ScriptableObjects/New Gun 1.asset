@@ -29,6 +29,11 @@ MonoBehaviour:
     - 0
     - 0
     - 0
+    - 0
+    - 0
+    - 0
+    - 0
+    - 0
     timeBetweenTicksArray: []
-    initialDamage: 5
-    type: 4
+    initialDamage: 0
+    WayDamageIsDealt: 6

@@ -5,7 +5,8 @@ using UnityEngine;
 [CanEditMultipleObjects]
 public class InspectorThing : PropertyDrawer
 {
-    public SerializedProperty type;
+    public SerializedProperty WayDamageIsDealt;
+
     Rect rect;
 
     public override void OnGUI(Rect position, SerializedProperty property, GUIContent label)
@@ -13,11 +14,12 @@ public class InspectorThing : PropertyDrawer
         EditorGUI.BeginProperty(position, label, property);
         rect = new Rect(position.x, position.y, position.width, position.height);
         
-        type = property.FindPropertyRelative("type");
-        EditorGUI.PropertyField(rect, type);
+        WayDamageIsDealt = property.FindPropertyRelative("WayDamageIsDealt");
+        EditorGUI.PropertyField(rect, WayDamageIsDealt);
 
-        switch ((DamageTypes)type.enumValueIndex)
-        {
+
+        switch ((DamageTypes)WayDamageIsDealt.enumValueIndex)
+        { 
             case DamageTypes.initialOnly:
                 string[] firstNames = { "initialDamage", "initialDelay" };
                 float index = 20;
@@ -29,7 +31,7 @@ public class InspectorThing : PropertyDrawer
                     index += position.height * data.CountInProperty();
                     if (data.isArray)
                     {
-                        index += 10;
+                        index += 12;
                     }
                 }
                 break;
