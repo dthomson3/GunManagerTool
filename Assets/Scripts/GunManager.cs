@@ -62,7 +62,11 @@ public class GunManager : MonoBehaviour {
             if (hit.collider != null && hit.transform.GetComponent<TakeDamage>() != null)
             {
                 print("HIT");
+<<<<<<< HEAD
+                HealthManager takeDamage = hit.transform.GetComponent<HealthManager>();
+=======
                 TakeDamage takeDamage = hit.transform.GetComponent<TakeDamage>();
+>>>>>>> 01587db08489ad7bf034dcaf9d767f83208a4525
                 currentGun.damageInfo.DoDamage(takeDamage);
             }
         }
